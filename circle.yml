@@ -28,6 +28,7 @@ compile:
     - cp phabext.json $CIRCLE_ARTIFACTS
 
     # build the image
+    - invoke liberate
     - invoke build
     - invoke build_test
     - invoke imageid | tee $CIRCLE_ARTIFACTS/docker-image-shasum256.txt
